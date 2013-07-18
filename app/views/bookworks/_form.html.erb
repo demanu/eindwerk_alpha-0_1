@@ -1,0 +1,53 @@
+<%= form_for(@bookwork) do |f| %>
+  <% if @bookwork.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bookwork.errors.count, "error") %> prohibited this bookwork from being saved:</h2>
+
+      <ul>
+      <% @bookwork.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :archived %><br />
+    <%= f.check_box :archived %>
+  </div>
+  <div class="field">
+    <%= f.label :lendable %><br />
+    <%= f.check_box :lendable %>
+  </div>
+  <div class="field">
+    <%= f.label :backorder %><br />
+    <%= f.check_box :backorder %>
+  </div>
+  <div class="field">
+    <%= f.label :loancount %><br />
+    <%= f.number_field :loancount %>
+  </div>
+  <div class="field">
+    <%= f.label :library_id %><br />
+    <%= f.text_field :library_id %>
+  </div>
+  <div class="field">
+    <%= f.label :bookstore_id %><br />
+    <%= f.text_field :bookstore_id %>
+  </div>
+  <div class="field">
+    <%= f.label :copies %><br />
+    <%= f.text_field :copies %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
